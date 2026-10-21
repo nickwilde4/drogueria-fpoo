@@ -26,6 +26,7 @@ float CReportes::gananciaPotencial() const{
     return 0;
 }
 
+//CAMBIO
 float CReportes::margenPorUnidad(int id) const{
     const vector<CMedicamento>& meds = inventario.getMedicamentos();
     for (size_t i = 0; i < meds.size(); i++) {
@@ -54,7 +55,7 @@ vector<CMedicamento> CReportes::masRentables(int n) const{
     }
     return copia;
 }
-
+//Fin De Cambio
 
 vector<CMedicamento> CReportes::ordenadosPorPrecio() const{
     // STUB (Grupo 8): implementar
