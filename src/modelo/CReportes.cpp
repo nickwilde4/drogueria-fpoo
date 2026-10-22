@@ -11,9 +11,15 @@ using namespace std;
 CReportes::CReportes(const CInventario& inventario_) : inventario(inventario_) {
 }
 
-float CReportes::valorTotalCosto() const{
-    //STUB (Grupo 8): implementar
-    return 0;
+float CReportes::valorTotalCosto() const {
+    double total = 0.0;
+
+    for (const CMedicamento& m : inventario.getMedicamentos()) {
+        total += static_cast<double>(m.getCostoDeCompra())
+                 * m.getCantidadDisponible();
+    }
+
+    return static_cast<float>(total);
 }
 
 float CReportes::valorTotalVenta() const{
