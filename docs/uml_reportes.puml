@@ -1,0 +1,21 @@
+' Fragmento UML del GRUPO 8 - CReportes
+' Pegar en https://plantuml.com/ para visualizar
+@startuml
+class CReportes{
+- inventario: const CInventario&
+
++ CReportes(inventario: const CInventario&)
++ valorTotalCosto(): float
++ valorTotalVenta(): float
++ gananciaPotencial(): float
++ margenPorUnidad(id: int): float
++ masRentables(n: int): vector<CMedicamento>
++ ordenadosPorPrecio(): vector<CMedicamento>
++ ordenadosPorNombre(): vector<CMedicamento>
++ ordenadosPorCantidad(): vector<CMedicamento>
+}
+
+' Colaboradores
+CReportes ..> CInventario : lee medicamentos
+CReportes ..> CMedicamento : devuelve copias
+@enduml
